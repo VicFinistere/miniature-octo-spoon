@@ -7,6 +7,8 @@
 #include "clean_context.h"
 
 
+// This SDL2 program is made using SDL Simple menu base template
+// (https://discourse.libsdl.org/t/a-simple-sdl2-menu/26923)
 
 int main (int argc, char* argv[])
 {
