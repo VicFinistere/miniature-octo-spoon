@@ -12,8 +12,8 @@ bool game_loop(){
 	bool quit = false;
 	while ( !quit )
 	{
-		int event_status = listen_to_event();
-		if(event_status==0)
+		std::string event_status = listen_to_event();
+		if(event_status=="0" || event_status=="quit")
 		{
 			quit = true;
 			Exit();

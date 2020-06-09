@@ -7,6 +7,6 @@ zlib/1.2.11@conan/stable
 sdl2/2.0.10@bincrafters/stable
 sdl2_image/2.0.5@bincrafters/stable
 sdl2_mixer/2.0.4@bincrafters/stable
-
+flac/1.3.3
 [generators]
 cmake

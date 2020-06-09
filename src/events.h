@@ -4,9 +4,9 @@
 #include <string>
 #include <vector>
 
-int listen_to_event(){
+std::string listen_to_event(){
 
-	int event_status = 100; 
+	std::string event_status = "playing"; 
 
 	// Event listener
 	while( SDL_PollEvent(&event) != 0)
@@ -17,7 +17,7 @@ int listen_to_event(){
 		{
 			// Quit
 			case SDL_QUIT:
-				event_status=0;
+				event_status="quit";
 				break;
 
 			case SDL_KEYDOWN:
@@ -28,7 +28,7 @@ int listen_to_event(){
 				
 				if ( event.key.keysym.scancode == SDL_SCANCODE_ESCAPE )
 				{
-					event_status = 0;
+					event_status="quit";
 				}
 
 				break;
