@@ -12,37 +12,48 @@
 
 int main (int argc, char* argv[])
 {
+
 	if( !init() )
 	{
+		// Init failed 		
 		printf( "Failed to initialize!\n" );
-	} else 
-	{
+	
+	} else {
 
+		// Screen
 		SDL_Surface *screen;
 		screen = SDL_GetWindowSurface(gWindow);
 		if(!screen)
 		{
+			// Window surface error
 			printf("SDL_GetWindowSurface error: %s\n", SDL_GetError());
 		}
 
+		// Game loop
 		bool quit = false;
-		//      SDL_Event e;
-
 		while ( !quit )
 		{
+			// Event listener
 			while( SDL_PollEvent(&event) != 0)
 			{
+
+				// Event handler
 				switch ( event.type )
 				{
+
+					// Quit
 					case SDL_QUIT:
 						quit = true;
 						Exit();
 						break;
+
+					// Mouse button
 					case SDL_MOUSEBUTTONDOWN:
 						break;
 				}
 			}
 		}
 	}
+
 	return 0;
 }
