@@ -3,11 +3,10 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "clean_context.h"
 
 int listen_to_event(bool quit){
 	
-	int event_status = 0; 
+	int event_status = 100; 
 
 	// Event listener
 	while( SDL_PollEvent(&event) != 0)
@@ -19,8 +18,7 @@ int listen_to_event(bool quit){
 
 			// Quit
 			case SDL_QUIT:
-				quit = true;
-				Exit();
+				event_status=0;
 				break;
 
 				// Mouse button

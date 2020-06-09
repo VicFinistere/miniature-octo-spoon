@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include "events.h"
+#include "clean_context.h"
 
 bool game_loop(){
 
@@ -11,7 +12,13 @@ bool game_loop(){
 	bool quit = false;
 	while ( !quit )
 	{
-		int event_status = listen_to_event(quit);	
+		int event_status = listen_to_event(quit);
+		if(event_status==0)
+		{
+			quit = true;
+			Exit();
+		}
+	
 	}
 
 }
