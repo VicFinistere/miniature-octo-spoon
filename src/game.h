@@ -12,7 +12,7 @@ bool game_loop(){
 	bool quit = false;
 	while ( !quit )
 	{
-		int event_status = listen_to_event(quit);
+		int event_status = listen_to_event();
 		if(event_status==0)
 		{
 			quit = true;

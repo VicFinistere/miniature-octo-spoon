@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 
-int listen_to_event(bool quit){
+int listen_to_event(){
 	
 	int event_status = 100; 
 
