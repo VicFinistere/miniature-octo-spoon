@@ -6,19 +6,20 @@
 
 std::string listen_to_event(){
 
-	std::string event_status = "playing"; 
+	std::string event_status = "playing";
 
 	// Event listener
 	while( SDL_PollEvent(&event) != 0)
 	{
+	    std::cout<<"Je suis dans la boucle "<<std::endl;
 
 		/* Traitement de l'événement */
 		switch (event.type) /* Quel événement avons-nous ? */
 		{
 			// Quit
 			case SDL_QUIT:
-				event_status="quit";
-				break;
+				event_status="EXIT";
+                return event_status;
 
 			case SDL_KEYDOWN:
 				fprintf(stdout, "Un appuie sur une touche :\n");
@@ -28,7 +29,8 @@ std::string listen_to_event(){
 				
 				if ( event.key.keysym.scancode == SDL_SCANCODE_ESCAPE )
 				{
-					event_status="quit";
+					event_status="EXIT";
+                    return event_status;
 				}
 
 				break;
@@ -54,7 +56,8 @@ std::string listen_to_event(){
 				fprintf(stdout, "\tsouris : %d\n",event.button.which);
 				fprintf(stdout, "\tbouton : %d\n",event.button.button);
 				fprintf(stdout, "\tposition : %d;%d\n",event.button.x,event.button.y);
-				break;
+				event_status="click";
+                return event_status;
 
 			case SDL_MOUSEBUTTONDOWN:
 				fprintf(stdout, "Un appuie sur un bouton de la souris :\n");
@@ -62,7 +65,8 @@ std::string listen_to_event(){
 				fprintf(stdout, "\tsouris : %d\n",event.button.which);
 				fprintf(stdout, "\tbouton : %d\n",event.button.button);
 				fprintf(stdout, "\tposition : %d;%d\n",event.button.x,event.button.y);
-				break;
+				event_status="click";
+                return event_status;
 
 			case SDL_MOUSEWHEEL:
 				fprintf(stdout, "Roulette de la souris :\n");
@@ -71,61 +75,14 @@ std::string listen_to_event(){
 				fprintf(stdout, "\tposition : %d;%d\n",event.wheel.x,event.wheel.y);
 				break;
 
-			case SDL_JOYDEVICEADDED:
-				fprintf(stdout, "Connexion de joystick :\n");
-				fprintf(stdout, "\tjoystick : %d\n",event.jdevice.which);
-				break;
-
-			case SDL_JOYDEVICEREMOVED:
-				fprintf(stdout, "Déconnexion de joystick :\n");
-				fprintf(stdout, "\tjoystick : %d\n",event.jdevice.which);
-				break;
-
-			case SDL_JOYAXISMOTION:
-				fprintf(stdout, "Déplacement joystick :\n");
-				fprintf(stdout, "\tjoystick : %d\n",event.jaxis.which);
-				fprintf(stdout, "\taxe : %d\n",event.jaxis.axis);
-				fprintf(stdout, "\tvaleur : %d\n",event.jaxis.value);
-				break;
-
-			case SDL_JOYBUTTONDOWN:
-				fprintf(stdout, "Appui bouton joystick :\n");
-				fprintf(stdout, "\tjoystick : %d\n",event.jbutton.which);
-				fprintf(stdout, "\tbutton : %d\n",event.jbutton.button);
-				fprintf(stdout, "\tétat : %d\n",event.jbutton.state);
-				break;
-
-			case SDL_JOYBUTTONUP:
-				fprintf(stdout, "Relâchement bouton joystick :\n");
-				fprintf(stdout, "\tjoystick : %d\n",event.jbutton.which);
-				fprintf(stdout, "\tbutton : %d\n",event.jbutton.button);
-				fprintf(stdout, "\tétat : %d\n",event.jbutton.state);
-				break;
-
-			case SDL_JOYBALLMOTION:
-				fprintf(stdout, "Déplacement de trackball :\n");
-				fprintf(stdout, "\tjoystick : %d\n",event.jball.which);
-				fprintf(stdout, "\ttrackball : %d\n",event.jball.ball);
-				fprintf(stdout, "\tdéplacement : %d;%d\n",event.jball.xrel,event.jball.yrel);
-				break;
-
-			case SDL_JOYHATMOTION:
-				fprintf(stdout, "Déplacement de chapeau d'un joystick :\n");
-				fprintf(stdout, "\tjoystick : %d\n",event.jhat.which);
-				fprintf(stdout, "\tbutton : %d\n",event.jhat.hat);
-				fprintf(stdout, "\tvaleur : %d\n",event.jhat.value);
-				break;
-
-
+	
 			case SDL_WINDOWEVENT:
 				fprintf(stdout, "Un événement de fenêtre, sur la fenêtre : %d\n",event.window.windowID);
 				// En théorie, ici, il faudrait faire un autre test ou switch pour chaque type de cet événement
 				break;
 
-			default:
-				fprintf(stdout, "Événement non traité : %d\n",event.type);
 		}
 	}
 
-	return event_status;
+    return event_status;
 }

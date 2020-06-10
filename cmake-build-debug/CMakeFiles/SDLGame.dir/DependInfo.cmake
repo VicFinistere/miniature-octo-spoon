@@ -10,11 +10,14 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "/home/zoe/.conan/data/sdl2_ttf/2.0.15/bincrafters/stable/package/6047a09255bac84f5b4ef8079cdd9a59545c805f/include"
+  "/home/zoe/.conan/data/sdl2_ttf/2.0.15/bincrafters/stable/package/6047a09255bac84f5b4ef8079cdd9a59545c805f/include/SDL2"
   "/home/zoe/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/4d69d30aed226aaca96b612018c6a1369d4e8dfa/include"
   "/home/zoe/.conan/data/sdl2_image/2.0.5/bincrafters/stable/package/4d69d30aed226aaca96b612018c6a1369d4e8dfa/include/SDL2"
   "/home/zoe/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/11028026375a3d365588598e0e86235a5482186d/include"
   "/home/zoe/.conan/data/sdl2_mixer/2.0.4/bincrafters/stable/package/11028026375a3d365588598e0e86235a5482186d/include/SDL2"
-  "/home/zoe/.conan/data/libpng/1.6.37/_/_/package/4f75e4b120320a9fb6ac0012242d9ac95d18b6f6/include"
+  "/home/zoe/.conan/data/freetype/2.9.1/bincrafters/stable/package/876d4331adf573973aca1cbdf6614fdd41b8c51e/include"
+  "/home/zoe/.conan/data/freetype/2.9.1/bincrafters/stable/package/876d4331adf573973aca1cbdf6614fdd41b8c51e/include/freetype2"
   "/home/zoe/.conan/data/sdl2/2.0.10/bincrafters/stable/package/e39e6e807cc8289876089e79c9302ea6c225d308/include"
   "/home/zoe/.conan/data/sdl2/2.0.10/bincrafters/stable/package/e39e6e807cc8289876089e79c9302ea6c225d308/include/SDL2"
   "/home/zoe/.conan/data/libtiff/4.0.9/_/_/package/fa9fdd0232d3e638f7faaa910c099f9e062fe60b/include"
@@ -22,6 +25,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/zoe/.conan/data/libmpg123/1.25.10/bincrafters/stable/package/56e0cf6d16ee57367a0661ab743f4e43b29223f8/include"
   "/home/zoe/.conan/data/tinymidi/20130325/bincrafters/stable/package/1d877a3df840030e6a8abb74c5ffb9088d08b47a/include"
   "/home/zoe/.conan/data/libiconv/1.15/_/_/package/1d877a3df840030e6a8abb74c5ffb9088d08b47a/include"
+  "/home/zoe/.conan/data/libpng/1.6.37/_/_/package/4f75e4b120320a9fb6ac0012242d9ac95d18b6f6/include"
   "/home/zoe/.conan/data/libxcursor/1.2.0/bincrafters/stable/package/127bbe8693e5e34a1bf2bcfc4a2047fb4d032343/include"
   "/home/zoe/.conan/data/libxinerama/1.1.4/bincrafters/stable/package/19b6ed42f5115fe5007b2b96e29d9374b2f70f2b/include"
   "/home/zoe/.conan/data/libxscrnsaver/1.2.3/bincrafters/stable/package/70f437061f3da92843c0af099da7a0894ce54477/include"

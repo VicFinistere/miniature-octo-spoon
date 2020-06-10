@@ -5,20 +5,22 @@
 #include <vector>
 #include "events.h"
 #include "clean_context.h"
+#include "level_manager.h"
 
-bool game_loop(){
-
-	// Game loop
-	bool quit = false;
-	while ( !quit )
-	{
-		std::string event_status = listen_to_event();
-		if(event_status=="0" || event_status=="quit")
-		{
-			quit = true;
-			Exit();
-		}
+void game_loop(){
 	
-	}
+	// Game loop trace
+	std::cout<<"Game loop"<<std::endl;
+	
+	// Game level
+	std::string action = "start";
+	while(action!="EXIT"){
 
+		// Play requested action
+		action = play(action);
+		std::cout<<action<<std::endl;
+	}
+	
+	// Exit
+	Exit();
 }
