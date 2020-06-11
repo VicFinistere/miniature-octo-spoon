@@ -7,7 +7,7 @@
 #include "clean_context.h"
 #include "level_manager.h"
 
-void game_loop(){
+void game_loop(SDL_Renderer* ren){
 	
 	// Game loop trace
 	std::cout<<"Game loop"<<std::endl;
@@ -17,7 +17,7 @@ void game_loop(){
 	while(action!="EXIT"){
 
 		// Play requested action
-		action = play(action);
+		action = play(action, ren);
 		std::cout<<action<<std::endl;
 	}
 	

@@ -11,8 +11,9 @@
 
 int main (int argc, char* argv[])
 {
+	SDL_Renderer* ren = init();
 
-	if( !init() )
+	if(ren==nullptr)
 	{
 		// Init failed 		
 		printf( "Failed to initialize!\n" );
@@ -28,7 +29,7 @@ int main (int argc, char* argv[])
 			printf("SDL_GetWindowSurface error: %s\n", SDL_GetError());
 		}
 		
-		game_loop();
+		game_loop(ren);
 	}
 
 	return 0;
