@@ -90,9 +90,6 @@ std::string play_level1(SDL_Renderer* ren){
 		// Free score surface
 		SDL_FreeSurface(score_surface);
 
-		// Score position
-		SDL_QueryTexture(score_texture, nullptr, nullptr, &score_width, &score_height);
-
 		// Get event
 		std::string event_status = listen_to_event();
 
