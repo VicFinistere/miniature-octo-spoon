@@ -23,7 +23,7 @@ std::string game_introduction(SDL_Renderer* ren){
 
 	//SDL 2.0 now uses textures to draw things but SDL_LoadBMP returns a surface
 	//this lets us choose when to upload or remove textures from the GPU
-	SDL_Surface *background = IMG_Load("assets/background.jpg");
+	SDL_Surface *background = IMG_Load("assets/splashscreen.jpeg");
 	if (background == nullptr){
 		std::cout << "IMG_Load Error: " << SDL_GetError() << std::endl;
 		status = "EXIT";

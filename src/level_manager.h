@@ -12,7 +12,7 @@ std::string play(std::string action, SDL_Renderer* ren)
         std::cout<<"Play introduction in play method"<<std::endl;
 		action = game_introduction(ren);
 	} else if(action=="Level1"){
-		action = play_level1();
+		action = play_level1(ren);
 	}
 
 	return action;
